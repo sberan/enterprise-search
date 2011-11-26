@@ -1,0 +1,3 @@
+examples of companies using solr
+fix slide formatting
+text size in demo

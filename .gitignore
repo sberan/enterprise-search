@@ -9,4 +9,5 @@ bin/
 *.ids
 MANIFEST.MF
 .DS_Store
-core-examples/readiness-webapp/overlays/
+example/solr/data
+example/work

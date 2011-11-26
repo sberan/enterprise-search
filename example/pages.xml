@@ -1,0 +1,65 @@
+<add>
+  <doc>
+    <field name="id">search.html</field>
+    <field name="page">
+      <![CDATA[
+          <html>
+            <head>
+              <title>Solr!</title>
+              <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+              <script type="text/javascript" src="/solr/page/?q=id:search.js"></script>
+              <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+            </head>
+            <body>
+              <h1>Students</h1>
+              Search:
+              <input type="text" id="search"/>
+              <br/>
+              <br/>
+              <table id="results">
+                <thead>
+                  <tr>
+                    <th id="firstName">First Name</th>
+                    <th id="lastName">Last Name</th>
+                    <th id="city">City</th>
+                    <th id="grade">Grade</th>
+                    <th id="email">E-Mail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </body>
+          </html>
+        ]]>
+    </field>
+  </doc>
+  <doc>
+    <field name="id">search.js</field>
+    <field name="page">
+      <![CDATA[
+        $(function(){
+          $('#search').keyup(function(){
+            var results = $('#results');
+            var tbody = results.find("tbody");
+            tbody.html("");
+            $.getJSON("/solr/select/?wt=json&rows=50&fq=type:student&q="+$("#search").val(), function(resp){
+              $(resp.response.docs).each(function(i, doc) {
+                var tr = $('<tr/>');
+                results.find('th').each(function(i, elem) {
+                  var id = $(elem).attr('id');
+                  var td = $('<td/>');
+                  td.html(doc[id][0]);
+                  tr.append(td);
+                });
+                tbody.append(tr);
+                
+              });
+            })
+          });
+        });
+      ]]>
+    </field>
+  </doc>
+</add>
+

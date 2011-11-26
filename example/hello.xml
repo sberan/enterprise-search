@@ -1,0 +1,16 @@
+<add>
+  <doc>
+    <field name="id">hello.html</field>
+    <field name="type">page</field>
+    <field name="page">
+      <![CDATA[
+      <html>
+        <body><h1>Solr!</h1>
+Hello!
+        </body>
+      </html>
+      ]]>
+    </field>
+  </doc>
+</add>
+
