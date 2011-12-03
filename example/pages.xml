@@ -6,9 +6,9 @@
           <html>
             <head>
               <title>Solr!</title>
-              <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+              <script type="text/javascript" src="http://localhost/jquery-1.7.min.js"></script>
               <script type="text/javascript" src="/solr/page/?q=id:search.js"></script>
-              <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+              <link rel="stylesheet" href="http://localhost/bootstrap.min.css">
             </head>
             <body>
               <h1>Students</h1>

@@ -22,10 +22,10 @@
      For more details about configurations options that may appear in
      this file, see http://wiki.apache.org/solr/SolrConfigXml. 
 -->
-
   <queryResponseWriter name="xpath" class="com.samberan.XPathResponseWriter"/>
+<!--
+-->
 
-  
   <requestHandler name="/page" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="wt">xpath</str>
@@ -33,6 +33,8 @@
       <str name="ct">text/html</str>
     </lst>
   </requestHandler>
+<!--  
+-->
 
  <!-- In all configuration below, a prefix of "solr." for class names
        is an alias that causes solr to search appropriate packages,
